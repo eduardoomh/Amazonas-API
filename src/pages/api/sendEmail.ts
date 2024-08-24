@@ -21,7 +21,13 @@ export const POST: APIRoute = async ({ request }) => {
         success: true, 
         code: 200, 
         res: response 
-    }), { status: 200 });
+    }), { 
+      status: 200,
+      headers: { 
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "https://reservaciones.selvatour.co", 
+      } 
+    });
     
   } catch (error: any) {
     console.error('Error enviando el correo:', error);

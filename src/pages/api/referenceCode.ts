@@ -26,7 +26,10 @@ export const POST: APIRoute = async ({ request }) => {
       reference: transaction_reference
     }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "https://reservaciones.selvatour.co", 
+      }
     });
   } catch (error: any) {
     console.error('Error generando el token:', error);
