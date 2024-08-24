@@ -26,6 +26,8 @@ export const POST: APIRoute = async ({ request }) => {
       headers: { 
         'Content-Type': 'application/json',
         "Access-Control-Allow-Origin": "https://reservaciones.selvatour.co", 
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
       } 
     });
     
@@ -35,4 +37,15 @@ export const POST: APIRoute = async ({ request }) => {
         error: error.message 
     }), { status: 500 });
   }
+};
+
+// Manejar solicitudes preflight (OPTIONS)
+export const OPTIONS: APIRoute = async () => {
+  return new Response(null, {
+    headers: {
+      'Access-Control-Allow-Origin': 'https://reservaciones.selvatour.co',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    }
+  });
 };
