@@ -1,0 +1,1 @@
+export const allowedOrigins = [`${import.meta.env.ALLOWED_ORIGIN}`];

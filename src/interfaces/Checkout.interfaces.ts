@@ -2,6 +2,7 @@ export interface CheckoutDataI {
     name?: string;
     email?: string;
     phone?: string;
+    phone_code?: string;
     reservations?: ReservationI[];
     reference?: string;
     price?: number;

@@ -3,7 +3,7 @@ import { formatToCurrency } from "../formatCurrency";
 import { formatDateToSpanish } from "../formatDate";
 
 export const adminTemplate = (values: CheckoutDataI) => {
-    const { name, phone, email, price, reference, reservations } = values;
+    const { name, phone, email, price, phone_code, reference, reservations } = values;
 
     return `<!DOCTYPE html>
 
@@ -323,7 +323,7 @@ export const adminTemplate = (values: CheckoutDataI) => {
                                                                         <p style="margin: 0;"> </p>
                                                                         <p style="margin: 0;"><strong>Correo:</strong> ${email}</p>
                                                                         <p style="margin: 0;"> </p>
-                                                                        <p style="margin: 0;"><strong>Teléfono:</strong> ${phone}</p>
+                                                                        <p style="margin: 0;"><strong>Teléfono:</strong> ${phone_code} ${phone}</p>
                                                                         <p style="margin: 0;"> </p>
                                                                         <p style="margin: 0;"><strong>Total:</strong> ${formatToCurrency(price as number)} COP</p>
                                                                         <p style="margin: 0;"> </p>
@@ -350,7 +350,7 @@ export const adminTemplate = (values: CheckoutDataI) => {
                                                                         <p style="margin: 0;"> </p>
                                                                         <p style="margin: 0;"><strong>Correo:</strong> ${email}</p>
                                                                         <p style="margin: 0;"> </p>
-                                                                        <p style="margin: 0;"><strong>Teléfono:</strong> ${phone}</p>
+                                                                        <p style="margin: 0;"><strong>Teléfono:</strong> ${phone_code} ${phone}</p>
                                                                         <p style="margin: 0;"> </p>
                                                                         <p style="margin: 0;"><strong>Total:</strong> ${ formatToCurrency(price as number)} COP</p>
                                                                         <p style="margin: 0;"> </p>

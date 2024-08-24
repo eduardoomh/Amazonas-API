@@ -3,7 +3,7 @@ import { formatToCurrency } from "../formatCurrency";
 import { formatDateToSpanish } from "../formatDate";
 
 export const clientTemplate = (values: CheckoutDataI) => {
-    const {name, phone, email, price, reference, reservations} = values;
+    const {name, phone, email, price, phone_code, reference, reservations} = values;
    
 return `<!DOCTYPE html>
 <html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
@@ -253,7 +253,7 @@ return `<!DOCTYPE html>
 <p style="margin: 0;"> </p>
 <p style="margin: 0;"><strong>Correo:</strong> ${email}</p>
 <p style="margin: 0;"> </p>
-<p style="margin: 0;"><strong>Teléfono:</strong> ${phone}</p>
+<p style="margin: 0;"><strong>Teléfono:</strong> ${phone_code} ${phone}</p>
 <p style="margin: 0;"> </p>
 <p style="margin: 0;"><strong>Total:</strong> ${ formatToCurrency(price as number)} COP</p>
 <p style="margin: 0;"> </p>
@@ -276,7 +276,7 @@ return `<!DOCTYPE html>
 <p style="margin: 0;">${email}</p>
 <p style="margin: 0;"> </p>
 <p style="margin: 0;"><strong>Teléfono</strong></p>
-<p style="margin: 0;">${phone}</p>
+<p style="margin: 0;">${phone_code} ${phone}</p>
 <p style="margin: 0;"> </p>
 <p style="margin: 0;"><strong>Total:</strong> ${ formatToCurrency(price as number)} COP</p>
 <p style="margin: 0;"> </p>
